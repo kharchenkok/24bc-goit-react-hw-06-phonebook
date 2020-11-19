@@ -1,6 +1,3 @@
-/* .form__style {
-  padding-top: 10px;
-} */
 .input__style {
   border: 2px solid rgb(133, 15, 70);
   height: 30px;
@@ -8,9 +5,9 @@
   max-width: 300px;
   margin-top: 10px;
 }
-
-/* .lable__style {
-  font-size: 20px;
-  display: flex;
-  flex-direction: column;
-} */
+.phonebook_titleContact {
+  color: darkslateblue;
+  font-weight: 800;
+  font-size: 28px;
+  text-decoration: underline;
+}

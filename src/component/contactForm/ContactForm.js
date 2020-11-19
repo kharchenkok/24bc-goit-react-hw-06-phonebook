@@ -48,7 +48,7 @@ const ContactForm = () => {
   
   const handleChange = ({ target }) => {
     dispatch(getContactFormValue(target));
-    // setContact({ ...formContact, [name]: value });
+   
   };
 
   return (
@@ -58,6 +58,7 @@ const ContactForm = () => {
         field={formContact.name.length ? "Number" : "Name"}
       />
       <ExsistNameAlert alert={alertExists} />
+  
       <form
         className={style.form__style}
         noValidate

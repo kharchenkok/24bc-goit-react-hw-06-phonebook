@@ -8,11 +8,15 @@ import style from "./Filter.module.css";
 const Filter = () => {
   const dispatch = useDispatch();
   const filter = useSelector((state) => state.filter);
+  const contacts = useSelector((state) => state.contacts)
   const userFilter = (e) => {
     dispatch(getFilterValue(e));
   };
 
   return (
+    <>
+       <h2 className={style.phonebook_titleContact}>Contacts</h2>
+       {contacts.length > 1 &&
     <form noValidate autoComplete="off">
       <p className={style.lable__style}>Find contacts by name</p>
 
@@ -22,8 +26,10 @@ const Filter = () => {
         variant="filled"
         onChange={userFilter}
         value={filter}
-      />
+        />
     </form>
+      }
+        </>
   );
 };
 

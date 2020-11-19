@@ -6,7 +6,7 @@ export const GET_DATA='@contacts/getLocalStorageData'
 
 
 export const GET_FILTER_VALUE='@filter/getFilterValue'
-// export const FILTER_BY_NAME='@filter/filterContactsByName'
+
 
 
 export const GET_FORM_VALUE='@contactForm/getContactFormValue'
