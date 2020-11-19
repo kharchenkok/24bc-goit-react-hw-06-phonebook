@@ -1,9 +1,16 @@
 import React from "react";
-import style from "./Filter.module.css";
-import PropTypes from "prop-types";
+import { useDispatch, useSelector } from "react-redux";
+import { getFilterValue } from "../../redux/action/filterActions";
 import { TextField } from "@material-ui/core";
+import style from "./Filter.module.css";
+// =======================================================
 
-const Filter = ({ userFilter,filter }) => {
+const Filter = () => {
+  const dispatch = useDispatch();
+  const filter = useSelector((state) => state.filter);
+  const userFilter = (e) => {
+    dispatch(getFilterValue(e));
+  };
 
   return (
     <form noValidate autoComplete="off">
@@ -21,7 +28,3 @@ const Filter = ({ userFilter,filter }) => {
 };
 
 export default Filter;
-
-Filter.propTypes = {
-  userFilter: PropTypes.func.isRequired,
-};

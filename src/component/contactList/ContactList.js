@@ -1,17 +1,27 @@
 import React from "react";
-import style from "./ContactList.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import PropTypes from "prop-types";
+import { deleteContact } from "../../redux/action/contactsActions";
 import { Button } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+import style from "./ContactList.module.css";
+// ======================================================================
+const ContactList = ({findUserContact}) => {
+  const contacts=useSelector(state=>state.contacts)
+  // const filter=useSelector(state=>state.filter)
+  const dispatch = useDispatch()
+  const deleteUserContact = (id) => {
+    dispatch(deleteContact(id));
+  };
 
-const ContactList = ({ findUserContact, deleteUserContact }) => {
+
   return (
     <TransitionGroup component="ul" className={style.contact__list}>
-      {findUserContact.map((elem, index) => (
+      {(contacts.length>1? findUserContact(): contacts).map((elem, index) => (
         <CSSTransition
           key={elem.id}
-          in={findUserContact.length > 0}
+          in={findUserContact().length > 0}
           timeout={250}
           classNames={style}
         >
@@ -42,5 +52,5 @@ export default ContactList;
 
 ContactList.propTypes = {
   findUserContact: PropTypes.func.isRequired,
-  deleteUserContact: PropTypes.func.isRequired,
+  
 };

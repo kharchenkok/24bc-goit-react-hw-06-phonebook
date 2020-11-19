@@ -1,22 +1,25 @@
 import React, { useState } from "react";
-import style from "./ContactForm.module.css";
-import PropTypes from "prop-types";
+import { useDispatch, useSelector } from "react-redux";
+
 import EmptyNameAlert from "../alert/EmptyNameAlert";
 import ExsistNameAlert from "../alert/ExsistNameAlert";
 
-import TextField from "@material-ui/core/TextField";
-
-import SaveIcon from "@material-ui/icons/Save";
-import { Button } from "@material-ui/core";
-import { useDispatch, useSelector } from "react-redux";
 import {
   clearForm,
   getContactFormValue,
 } from "../../redux/action/contactFormActions";
+import { addContact } from "../../redux/action/contactsActions";
 
-const ContactForm = ({ addUserContact, contacts }) => {
+import TextField from "@material-ui/core/TextField";
+import SaveIcon from "@material-ui/icons/Save";
+import { Button } from "@material-ui/core";
+
+import style from "./ContactForm.module.css";
+// =======================================================================
+const ContactForm = () => {
   const formContact = useSelector((state) => state.formContact);
-  // const [formContact, setContact] = useState(initialFormContact);
+  const contacts = useSelector((state) => state.contacts);
+
   const [alertEmpty, setAlertEmpty] = useState(false);
   const [alertExists, setAlertExists] = useState(false);
 
@@ -38,10 +41,11 @@ const ContactForm = ({ addUserContact, contacts }) => {
       return;
     }
 
-    addUserContact(name, number);
+    dispatch(addContact(name, number));
 
     dispatch(clearForm());
   };
+  
   const handleChange = ({ target }) => {
     dispatch(getContactFormValue(target));
     // setContact({ ...formContact, [name]: value });
@@ -96,8 +100,3 @@ const ContactForm = ({ addUserContact, contacts }) => {
 };
 
 export default ContactForm;
-
-ContactForm.propTypes = {
-  addUserContact: PropTypes.func.isRequired,
-  contacts: PropTypes.array.isRequired,
-};
