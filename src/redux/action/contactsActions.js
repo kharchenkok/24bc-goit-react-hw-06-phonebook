@@ -1,18 +1,18 @@
 import { ADD_CONTACT,GET_DATA,DELETE_CONTACT} from "../constant";
 import { v4 as uuidv4 } from "uuid";
 
-export const addContact = (name,number)=>({
+export const addContact = (payload)=>({
     type:ADD_CONTACT,
     payload:{
-        contact:{name,number,id:uuidv4()}}
+        contact:{...payload,id:uuidv4()}}
 })
 
-export const getData = (getLocalStorageData)=>({
+export const getData = (payload)=>({
     type:GET_DATA,
-    payload:getLocalStorageData
+    payload
 })
-export const deleteContact = (id)=>({
+export const deleteContact = (payload)=>({
     type:DELETE_CONTACT,
-    payload:id
+    payload
 })
 
