@@ -1,3 +1,4 @@
+
 import { ADD_CONTACT, DELETE_CONTACT, GET_DATA } from "../constant";
 
 const initialState = [];
@@ -10,7 +11,7 @@ const contactsReducer = (state = initialState, { type, payload }) => {
     case GET_DATA:
       return JSON.parse(payload);
     case DELETE_CONTACT:
-      return state.filter((contact) => contact.id !== payload);
+      return [...state.filter((contact) => contact.id !== payload)];
     default:
       return state;
   }
