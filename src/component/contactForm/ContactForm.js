@@ -4,15 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import EmptyNameAlert from "../alert/EmptyNameAlert";
 import ExsistNameAlert from "../alert/ExsistNameAlert";
 
-import {
-  clearForm,
-  getContactFormValue,
-} from "../../redux/action/contactFormActions";
-import { addContact } from "../../redux/action/contactsActions";
-
 import TextField from "@material-ui/core/TextField";
 import SaveIcon from "@material-ui/icons/Save";
 import { Button } from "@material-ui/core";
+
+import { addContact } from "../../redux/slice/contactsSlice";
+import { clearForm, getContactFormValue } from "../../redux/slice/contactFormSlice";
 
 import style from "./ContactForm.module.css";
 // =======================================================================

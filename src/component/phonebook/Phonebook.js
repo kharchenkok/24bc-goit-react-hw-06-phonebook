@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
-import { getData } from "../../redux/action/contactsActions";
+import { getData } from "../../redux/slice/contactsSlice";
 
 import ContactForm from "../contactForm/ContactForm";
 import ContactList from "../contactList/ContactList";

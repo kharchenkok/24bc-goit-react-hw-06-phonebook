@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getFilterValue } from "../../redux/action/filterActions";
+import { getFilterValue } from "../../redux/slice/filterSlice";
+
 import { TextField } from "@material-ui/core";
 import style from "./Filter.module.css";
 // =======================================================

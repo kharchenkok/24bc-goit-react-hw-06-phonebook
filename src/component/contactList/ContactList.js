@@ -1,7 +1,8 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import { deleteContact } from "../../redux/action/contactsActions";
+import { deleteContact } from "../../redux/slice/contactsSlice";
+
 import { Button } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
 import style from "./ContactList.module.css";
