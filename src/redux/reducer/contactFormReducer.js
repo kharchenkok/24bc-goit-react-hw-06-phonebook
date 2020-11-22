@@ -12,6 +12,7 @@ const contactFormReducer=createReducer(initialState,{
 
 })
 
+export default contactFormReducer;
 
 
 
@@ -27,4 +28,3 @@ const contactFormReducer=createReducer(initialState,{
 //   }
 // };
 
-export default contactFormReducer;

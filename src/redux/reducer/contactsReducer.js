@@ -9,6 +9,7 @@ const contactsReducer=createReducer(initialState,{
   [DELETE_CONTACT]:(state,action)=>[...state.filter((contact) => contact.id !== action.payload)]
 })
 
+export default contactsReducer;
 
 
 // const contactsReducer = (state = initialState, { type, payload }) => {
@@ -25,6 +26,5 @@ const contactsReducer=createReducer(initialState,{
 //   }
 // };
 
-export default contactsReducer;
 
 

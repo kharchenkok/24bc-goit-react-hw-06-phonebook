@@ -9,6 +9,7 @@ const filterReducer=createReducer(initialState,{
     return target.value.toLowerCase()}
 })
 
+export default filterReducer;
 
 
 // const filterReducer = (state = initialState, { type, payload }) => {
@@ -21,4 +22,3 @@ const filterReducer=createReducer(initialState,{
 //   }
 // };
 
-export default filterReducer;

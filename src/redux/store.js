@@ -1,13 +1,21 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { getDefaultMiddleware } from '@reduxjs/toolkit';
+import { GET_FORM_VALUE } from './constant';
 
-// import { createStore } from "redux";
 import rootReducer from './reducer/rootReducer'
-// import { composeWithDevTools } from "redux-devtools-extension";
 
 const store=configureStore({
-    reducer:rootReducer
+    reducer:rootReducer,
+    // customizedMiddleware:getDefaultMiddleware({
+    //     serializableCheck: false
+    //  })
+     middleware: getDefaultMiddleware({
+        serializableCheck: {
+          ignoredActions: [GET_FORM_VALUE],
+        },
+      }),
 })
 
-// const store=createStore(rootReducer,composeWithDevTools())
+
 
 export default store
