@@ -25,12 +25,3 @@ export const{addContact,getData,deleteContact}=actions
 
 export default reducer
 
-// payload:{
-//     contact:{...payload,id:uuidv4()}}
-// case ADD_CONTACT:
-//     return [...state, payload.contact];
-
-//   case GET_DATA:
-//     return JSON.parse(payload);
-//   case DELETE_CONTACT:
-//     return [...state.filter((contact) => contact.id !== payload)];
