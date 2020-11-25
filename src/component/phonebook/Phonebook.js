@@ -17,7 +17,7 @@ const Phonebook = () => {
   useEffect(() => {
     const getLocalStorageData = localStorage.getItem("contacts");
     getLocalStorageData && dispatch(getData(getLocalStorageData));
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     localStorage.setItem("contacts", JSON.stringify(contacts));
